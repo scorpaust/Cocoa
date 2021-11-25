@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3729270472811508537}
   - component: {fileID: 4984894543810080748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682624405450364810}
   - component: {fileID: 1695901965549220931}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: l_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3743280277079217911}
   - component: {fileID: 4557680438289802837}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: r_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8608025159340155403}
   - component: {fileID: 8378292297942631040}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: eye_shiny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720874818015914528}
   - component: {fileID: 7871130932100254804}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: l_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8009503652208225780}
   - component: {fileID: 8285113490824484396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: w_add
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4675110767590967783}
   - component: {fileID: 3146355573133874835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: add
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2253938908408309934}
   - component: {fileID: 7465909682381160590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: r_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 3799378646761452687}
   - component: {fileID: 3799378646742053341}
   - component: {fileID: 3799378646741944445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5520,7 +5520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5657116164014445030}
   - component: {fileID: 4862697822323782590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5610,7 +5610,7 @@ GameObject:
   - component: {fileID: 5694408206673475594}
   - component: {fileID: 5608336761634641636}
   - component: {fileID: 5608588300000912152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10496,7 +10496,7 @@ GameObject:
   - component: {fileID: 5699739971027989066}
   - component: {fileID: 5608842907166422774}
   - component: {fileID: 5607651345700544822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15382,9 +15382,9 @@ GameObject:
   - component: {fileID: 1120455995}
   - component: {fileID: 1120455994}
   - component: {fileID: 5984345536892605411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MonD_01
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15441,11 +15441,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 25c6c3abd2c8a7741a4c79d5a98f6e12, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1120455994
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -15459,8 +15459,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.040962696, y: 4.4237905}
-  m_Size: {x: 2.0565224, y: 4.850341}
+  m_Offset: {x: -0.19728422, y: 1.9432163}
+  m_Size: {x: 1.9770765, y: 1.9770765}
   m_Direction: 0
 --- !u!114 &5984345536892605411
 MonoBehaviour:
@@ -15474,6 +15474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6518cb842b1d404e8ea990f613ec87f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 2
+  transitionName: 
 --- !u!1 &7731894900274485430
 GameObject:
   m_ObjectHideFlags: 0
@@ -15485,7 +15487,7 @@ GameObject:
   - component: {fileID: 385367842000860138}
   - component: {fileID: 5648801001775717758}
   - component: {fileID: 3360786081696020806}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20368,7 +20370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8712656689231037051}
   - component: {fileID: 2665397264098861058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: r_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20452,7 +20454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4920419764875797458}
   - component: {fileID: 8008962405834916208}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: l_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20534,7 +20536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6589103275338149602}
   - component: {fileID: 5719165812577754616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

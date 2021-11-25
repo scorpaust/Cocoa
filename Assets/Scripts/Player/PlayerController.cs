@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     [SerializeField]
     private float moveSpeed = 1f;
+
+    [SerializeField]
+    private string transitionName;
+
+    public string TransitionName { get { return transitionName; } set { transitionName = value; } }
 
     private Rigidbody2D rb;
 
@@ -18,7 +25,18 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         anim = GetComponent<Animator>();
-	}
+
+        if (instance == null)
+		{
+            instance = this;
+		}
+        else
+		{
+            Destroy(gameObject);
+		}
+
+        DontDestroyOnLoad(gameObject);
+    }
 
 	// Start is called before the first frame update
 	void Start()
