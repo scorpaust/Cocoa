@@ -15459,7 +15459,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19728422, y: 1.9432163}
+  m_Offset: {x: -0.19728422, y: 2.7032356}
   m_Size: {x: 1.9770765, y: 1.9770765}
   m_Direction: 0
 --- !u!114 &5984345536892605411
@@ -15476,6 +15476,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   transitionName: 
+  bottomLeftEdge: {x: 0, y: 0, z: 0}
+  topRightEdge: {x: 0, y: 0, z: 0}
+  tileMap: {fileID: 0}
 --- !u!1 &7731894900274485430
 GameObject:
   m_ObjectHideFlags: 0
