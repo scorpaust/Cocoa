@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
 
     private bool walking;
 
+    private bool canMove = true;
+
+    public bool CanMove { get { return canMove; } set { canMove = value; } }
+
 	private void Awake()
 	{
         rb = GetComponent<Rigidbody2D>();
@@ -67,11 +71,19 @@ public class PlayerController : MonoBehaviour
 
         float verticalMovement = Input.GetAxisRaw("Vertical");
 
-        rb.velocity = new Vector2(horizontalMovement, verticalMovement) * moveSpeed;
+        if (!canMove)
+        {
+            rb.velocity = Vector2.zero;
+        }
+        else
+        {
+            rb.velocity = new Vector2(horizontalMovement, verticalMovement) * moveSpeed;
+        }
 
         anim.SetBool("walk", walking);
         
-        HandleFacingDirection(horizontalMovement);
+        if (canMove)
+            HandleFacingDirection(horizontalMovement);
     }
 
     private void HandleFacingDirection(float horizontalMovement)

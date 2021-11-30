@@ -536,7 +536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &450367992
 RectTransform:
   m_ObjectHideFlags: 0
@@ -606,6 +606,9 @@ GameObject:
   - component: {fileID: 616964167}
   - component: {fileID: 616964166}
   - component: {fileID: 616964165}
+  - component: {fileID: 616964169}
+  - component: {fileID: 616964168}
+  - component: {fileID: 616964170}
   m_Layer: 0
   m_Name: Googon Healer
   m_TagString: Untagged
@@ -697,6 +700,78 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &616964168
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616964164}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.012905121, y: -0.35374576}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.48, y: 0.64}
+    newSize: {x: 0.48, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.486599, y: 1.0858735}
+  m_EdgeRadius: 0
+--- !u!61 &616964169
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616964164}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.014548931, y: -0.070926175}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.48, y: 0.64}
+    newSize: {x: 0.48, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.27631444, y: 0.49814764}
+  m_EdgeRadius: 0
+--- !u!114 &616964170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616964164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a386b13f21029439b6f68961eaa3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sentences:
+  - '#Googon'
+  - "Hey, I\xB4m Googon Healer."
+  - '#Cocoa'
+  - "Hello! I\xB4m Cocoa Wizard. "
+  - Please, help me to find my sister.
+  - '#Googon'
+  - Ok. I can heal you, my friend.
 --- !u!1 &743136162
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &743136163
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11577,6 +11652,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca2c11ac693efdf4abec912e1aaf8864, type: 3}
+--- !u!1 &8733634141969121968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8733634142597898277, guid: ca2c11ac693efdf4abec912e1aaf8864, type: 3}
+  m_PrefabInstance: {fileID: 8733634141969121967}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8733634141969121969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8733634141969121968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdccaa052429d974e8aa417b9d1a8f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogText: {fileID: 82867878}
+  nameText: {fileID: 438580445}
+  dialogBox: {fileID: 743136162}
+  nameBox: {fileID: 450367991}
+  dialogSentences:
+  - Hey there, Cocoa!
+  - How are you my bitch?
 --- !u!1001 &9125469655984759768
 PrefabInstance:
   m_ObjectHideFlags: 0
