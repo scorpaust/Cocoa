@@ -609,6 +609,7 @@ GameObject:
   - component: {fileID: 616964169}
   - component: {fileID: 616964168}
   - component: {fileID: 616964170}
+  - component: {fileID: 616964171}
   m_Layer: 0
   m_Name: Googon Healer
   m_TagString: Untagged
@@ -772,6 +773,32 @@ MonoBehaviour:
   - Please, help me to find my sister.
   - '#Googon'
   - Ok. I can heal you, my friend.
+--- !u!114 &616964171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616964164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67702c9f564dedc45bbcb2d7ac9224ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: Googon
+  playerLevel: 3
+  currentXp: 200
+  maxHP: 400
+  currentHP: 400
+  maxMana: 50
+  currentMana: 50
+  dexterity: 2
+  defence: 7
+  inteligence: 20
+  luck: 8
+  maxLevel: 100
+  xpForNextLevel: 
+  baseLevelXp: 0
 --- !u!1 &743136162
 GameObject:
   m_ObjectHideFlags: 0
@@ -5193,6 +5220,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 332b21a684312b34798ace98affe4eed, type: 3}
+--- !u!1 &1273288400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7041806645088666966, guid: 332b21a684312b34798ace98affe4eed, type: 3}
+  m_PrefabInstance: {fileID: 1273288399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1273288401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273288400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67702c9f564dedc45bbcb2d7ac9224ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: Cocoa
+  playerLevel: 1
+  currentXp: 0
+  maxHP: 100
+  currentHP: 0
+  maxMana: 20
+  currentMana: 0
+  dexterity: 5
+  defence: 10
+  inteligence: 4
+  luck: 2
+  maxLevel: 99
+  xpForNextLevel: 
+  baseLevelXp: 100
 --- !u!1 &1352971050
 GameObject:
   m_ObjectHideFlags: 0
@@ -11061,6 +11119,50 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1739651831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1739651832}
+  - component: {fileID: 1739651833}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1739651832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739651831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1739651833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739651831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e84e5fb99381d545ad955143936e9c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: []
 --- !u!1 &1915583226
 GameObject:
   m_ObjectHideFlags: 0
