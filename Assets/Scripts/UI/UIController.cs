@@ -10,6 +10,9 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private Image imageToFade;
 
+    [SerializeField]
+    private GameObject menu;
+
 	private void Awake()
 	{
         instance = this;
@@ -24,8 +27,23 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ToggleMenuOnOff();
     }
+
+    private void ToggleMenuOnOff()
+	{
+        if (Input.GetKeyDown(KeyCode.M))
+		{
+            if (menu.activeInHierarchy)
+            {
+                menu.SetActive(false);
+            }
+            else
+            {
+                menu.SetActive(true);
+            }
+        } 
+	}
 
     public void FadeImage()
 	{
