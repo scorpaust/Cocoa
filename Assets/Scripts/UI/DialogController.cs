@@ -53,7 +53,7 @@ public class DialogController : MonoBehaviour
                         currentSentence = 0;
                         nameBox.SetActive(false);
                         dialogBox.SetActive(false);
-                        PlayerController.instance.CanMove = true;
+                        GameManager.instance.DialogBoxOpened = false;
                     }
                     else
                     {
@@ -96,7 +96,7 @@ public class DialogController : MonoBehaviour
 
         dialogJustStarted = true;
 
-        PlayerController.instance.CanMove = false;
+        GameManager.instance.DialogBoxOpened = true;
 	}
 
     public bool IsDialogBoxActive()

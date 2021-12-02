@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField]
+    private Sprite charImage;
+
+    [SerializeField]
     private string playerName;
 
     [SerializeField]

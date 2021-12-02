@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
@@ -12,6 +13,20 @@ public class UIController : MonoBehaviour
 
     [SerializeField]
     private GameObject menu;
+
+    [SerializeField]
+    private TextMeshProUGUI[]  nameText, hpText, manaText, levelText, xpText;
+
+    [SerializeField]
+    private Slider[] xpSlider;
+
+    [SerializeField]
+    private Image[] charImage;
+
+    [SerializeField]
+    private GameObject[] charPanel;
+
+    private PlayerStats[] playerStats;
 
 	private void Awake()
 	{
@@ -36,13 +51,26 @@ public class UIController : MonoBehaviour
 		{
             if (menu.activeInHierarchy)
             {
+                UpdateStats();
                 menu.SetActive(false);
+                GameManager.instance.GameMenuOpened = false;
             }
             else
             {
                 menu.SetActive(true);
+                GameManager.instance.GameMenuOpened = true;
             }
         } 
+	}
+
+    public void UpdateStats()
+	{
+        playerStats = GameManager.instance.GetPlayerStats();
+
+        for (int i = 0; i < playerStats.Length; i++)
+		{
+            charPanel[i].gameObject.SetActive(true);
+		}
 	}
 
     public void FadeImage()
