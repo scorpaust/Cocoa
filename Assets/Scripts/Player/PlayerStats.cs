@@ -7,17 +7,27 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private Sprite charImage;
 
+    public Sprite CharImage {  get { return charImage; } private set { } }
+
     [SerializeField]
     private string playerName;
+
+    public string PlayerName {  get { return playerName; } private set { } }
 
     [SerializeField]
     private int playerLevel;
 
+    public int PlayerLevel {  get { return playerLevel; } private set { } }
+
     [SerializeField]
     private int currentXp;
 
+    public int CurrentXp {  get { return currentXp; } private set { } }
+
     [SerializeField]
     private int maxHP = 100;
+
+    public int MaxHP {  get { return maxHP; } private set { } }
 
     [SerializeField]
     private int currentHP;
@@ -25,8 +35,12 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private int maxMana = 20;
 
+    public int MaxMana {  get { return maxMana; } private set { } }
+
     [SerializeField]
     private int currentMana;
+
+    public int CurrentMana {  get { return currentMana; } private set { } }
 
     [SerializeField]
     private int dexterity;
@@ -46,8 +60,12 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private int[] xpForNextLevel;
 
+    public int[] XpForNextLevel {  get { return xpForNextLevel; } private set { } }
+
     [SerializeField]
     private int baseLevelXp;
+
+    public int BaseLevelXp {  get { return baseLevelXp; } private set { } }
 
     // Start is called before the first frame update
     void Start()

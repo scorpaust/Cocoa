@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour
     private GameObject menu;
 
     [SerializeField]
-    private TextMeshProUGUI[]  nameText, hpText, manaText, levelText, xpText;
+    private TextMeshProUGUI[]  nameText, hpText, manaText, currentXp, xpText;
 
     [SerializeField]
     private Slider[] xpSlider;
@@ -51,12 +51,12 @@ public class UIController : MonoBehaviour
 		{
             if (menu.activeInHierarchy)
             {
-                UpdateStats();
                 menu.SetActive(false);
                 GameManager.instance.GameMenuOpened = false;
             }
             else
             {
+                UpdateStats();
                 menu.SetActive(true);
                 GameManager.instance.GameMenuOpened = true;
             }
@@ -69,7 +69,15 @@ public class UIController : MonoBehaviour
 
         for (int i = 0; i < playerStats.Length; i++)
 		{
-            charPanel[i].gameObject.SetActive(true);
+            charPanel[i].SetActive(true);
+            nameText[i].text = playerStats[i].PlayerName;
+            charImage[i].sprite = playerStats[i].CharImage;
+            hpText[i].text = "HP: " + playerStats[i].CurrentXp + "/" + playerStats[i].MaxHP;
+            manaText[i].text = "Mana: " + playerStats[i].CurrentMana + "/" + playerStats[i].MaxMana;
+            currentXp[i].text = "Current Xp: " + playerStats[i].CurrentXp;
+            xpText[i].text = playerStats[i].CurrentXp.ToString() + "/" + playerStats[i].XpForNextLevel[playerStats[i].PlayerLevel];
+            xpSlider[i].maxValue = playerStats[i].XpForNextLevel[playerStats[i].PlayerLevel];
+            xpSlider[i].value = playerStats[i].CurrentXp;
 		}
 	}
 
