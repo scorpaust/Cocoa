@@ -26,6 +26,15 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private GameObject[] charPanel;
 
+    [SerializeField]
+    private GameObject[] statsButtons;
+
+    [SerializeField]
+    private TextMeshProUGUI statsName, statsHP, statsMana, statsDexterity, statsDefence, statsLuck, statsInteligence;
+
+    [SerializeField]
+    private Image charStatsImage;
+
     private PlayerStats[] playerStats;
 
 	private void Awake()
@@ -79,6 +88,35 @@ public class UIController : MonoBehaviour
             xpSlider[i].maxValue = playerStats[i].XpForNextLevel[playerStats[i].PlayerLevel];
             xpSlider[i].value = playerStats[i].CurrentXp;
 		}
+	}
+
+    public void StatsMenu()
+	{
+        StatsMenuUpdate(0);
+        for (int i = 0; i < playerStats.Length; i++)
+		{
+            statsButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = playerStats[i].PlayerName;
+            statsButtons[i].SetActive(true);
+		}
+	}
+
+    public void StatsMenuUpdate(int playerSelectedNumber)
+	{
+        PlayerStats playerSelected = playerStats[playerSelectedNumber];
+
+        statsName.text = playerSelected.PlayerName;
+        statsHP.text = playerSelected.CurrentHP.ToString() + "/" + playerSelected.MaxHP.ToString();
+        statsMana.text = playerSelected.CurrentMana.ToString() + "/" + playerSelected.MaxMana.ToString();
+        statsDexterity.text = playerSelected.Dexterity.ToString();
+        statsDefence.text = playerSelected.Defence.ToString();
+        statsLuck.text = playerSelected.Luck.ToString();
+        statsInteligence.text = playerSelected.Inteligence.ToString();
+        charStatsImage.sprite = playerSelected.CharImage;
+	}
+
+    public void QuitGame()
+	{
+        Application.Quit();
 	}
 
     public void FadeImage()

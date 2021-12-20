@@ -32,6 +32,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private int currentHP;
 
+    public int CurrentHP {  get { return currentHP; } private set { } } 
+
     [SerializeField]
     private int maxMana = 20;
 
@@ -45,14 +47,22 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private int dexterity;
 
+    public int Dexterity {  get { return dexterity; } private set { } }
+
     [SerializeField]
     private int defence;
+
+    public int Defence {  get { return defence; } private set { } }
 
     [SerializeField]
     private int inteligence;
 
+    public int Inteligence {  get { return inteligence; } private set { } }
+
     [SerializeField]
     private int luck;
+
+    public int Luck {  get { return luck; } private set { } }
 
     [SerializeField]
     private int maxLevel = 100;

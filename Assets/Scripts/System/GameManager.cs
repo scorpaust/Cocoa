@@ -33,12 +33,29 @@ public class GameManager : MonoBehaviour
 	void Start()
     {
         playerStats = FindObjectsOfType<PlayerStats>();
+        SortPlayerStatsArray();
     }
 
     // Update is called once per frame
     void Update()
     {
         HandlePlayerMovement();
+    }
+
+    private void SortPlayerStatsArray()
+	{
+        for (int i = 0; i < playerStats.Length; i++)
+        {
+            PlayerStats temp = playerStats[i];
+            if (playerStats[i].gameObject.CompareTag("Player"))
+            {
+                if (i > 0)
+                {
+                    playerStats[i] = playerStats[0];
+                    playerStats[0] = temp;
+                }
+            }
+        }
     }
 
     private void HandlePlayerMovement()
