@@ -30,14 +30,40 @@ public class UIController : MonoBehaviour
     private GameObject[] statsButtons;
 
     [SerializeField]
-    private TextMeshProUGUI statsName, statsHP, statsMana, statsDexterity, statsDefence, statsLuck, statsInteligence;
+    private TextMeshProUGUI statsName, statsHP, statsMana, statsDexterity, statsDefence, statsLuck, statsInteligence, statsEquippedWeapon, statsEquippedArmor;
+
+    [SerializeField]
+    private TextMeshProUGUI statsEquippedWeaponPower, statsArmorDefence;
 
     [SerializeField]
     private Image charStatsImage;
 
+    [SerializeField]
+    private GameObject itemSlotContainer;
+
+    [SerializeField]
+    private Transform itemSlotContainerParent;
+
+    [SerializeField]
+    private TextMeshProUGUI itemName, itemDescription;
+
+    [SerializeField]
+    private GameObject charChoicePanel, itemDataPanel;
+
+    [SerializeField]
+    private TextMeshProUGUI[] itemCharsChoiceNames;
+
+    public TextMeshProUGUI ItemName {  get { return itemName; } set { itemName = value;  } }
+
+    public TextMeshProUGUI ItemDescription { get { return itemDescription; } set { itemDescription = value; } }
+
     private PlayerStats[] playerStats;
 
-	private void Awake()
+    private ItemsManager activeItem;
+
+    public ItemsManager ActiveItem {  get { return activeItem; } set { activeItem = value; } }
+
+    private void Awake()
 	{
         instance = this;
 	}
@@ -45,7 +71,8 @@ public class UIController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        
+        itemName.text = "";
+        itemDescription.text = "";
     }
 
     // Update is called once per frame
@@ -70,6 +97,14 @@ public class UIController : MonoBehaviour
                 GameManager.instance.GameMenuOpened = true;
             }
         } 
+	}
+
+    private void ClearItemsSlotFromInventory()
+	{
+        foreach (Transform itemSlot in itemSlotContainerParent)
+		{
+            Destroy(itemSlot.gameObject);
+		}
 	}
 
     public void UpdateStats()
@@ -112,6 +147,79 @@ public class UIController : MonoBehaviour
         statsLuck.text = playerSelected.Luck.ToString();
         statsInteligence.text = playerSelected.Inteligence.ToString();
         charStatsImage.sprite = playerSelected.CharImage;
+        statsEquippedWeapon.text = playerSelected.EquippedWeaponName;
+        statsEquippedArmor.text = playerSelected.EquippedArmorName;
+        statsEquippedWeaponPower.text = playerSelected.WeaponPower.ToString();
+        statsArmorDefence.text = playerSelected.ArmorDefence.ToString();
+	}
+
+    public void UpdateItemsInventory()
+	{
+
+        ClearItemsSlotFromInventory();
+
+        foreach (ItemsManager item in Inventory.instance.GetItemsList())
+		{
+            RectTransform itemSlot = Instantiate(itemSlotContainer, itemSlotContainerParent).GetComponent<RectTransform>();
+
+            Image itemImage = itemSlot.Find("Item Image").GetComponent<Image>();
+
+            itemImage.sprite = item.ItemImage;
+
+            TextMeshProUGUI itemAmountText = itemSlot.Find("Item amount").GetComponent<TextMeshProUGUI>();
+
+            if (item.Amount > 1)
+			{
+                itemAmountText.text = item.Amount.ToString();
+			}
+            else
+			{
+                itemAmountText.text = "";
+			}
+
+            itemSlot.GetComponent<ItemButton>().ItemOnButton = item;
+		}
+	}
+
+    public void DiscardItem()
+	{
+        Inventory.instance.RemoveItem(activeItem);
+
+        UpdateItemsInventory();
+	}
+
+    public void UseItem(int selectedChar)
+	{
+        activeItem.UseItem(selectedChar);
+        OpenCharChoicePanel();
+	}
+
+    public void OpenCharChoicePanel()
+	{
+        itemDataPanel.SetActive(false);
+
+        charChoicePanel.SetActive(true);
+
+        if (activeItem)
+		{
+            for (int i = 0; i < playerStats.Length; i++)
+            {
+                PlayerStats activePlayer = GameManager.instance.GetPlayerStats()[i];
+
+                itemCharsChoiceNames[i].text = activePlayer.PlayerName;
+
+                bool activePlayerAvailable = activePlayer.gameObject.activeInHierarchy;
+
+                itemCharsChoiceNames[i].transform.parent.gameObject.SetActive(activePlayerAvailable);
+            }
+        }    
+	}
+
+    public void CloseCharChoicePanel()
+	{
+        itemDataPanel.SetActive(true);
+
+        charChoicePanel.SetActive(false);
 	}
 
     public void QuitGame()

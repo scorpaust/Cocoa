@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    public static PlayerStats instance;
+
     [SerializeField]
     private Sprite charImage;
 
@@ -77,9 +79,35 @@ public class PlayerStats : MonoBehaviour
 
     public int BaseLevelXp {  get { return baseLevelXp; } private set { } }
 
+    [SerializeField]
+    private string equippedWeaponName, equippedArmorName;
+
+    public string EquippedWeaponName {  get { return equippedWeaponName; } }
+
+    public string EquippedArmorName {  get { return equippedArmorName; } }
+
+    [SerializeField]
+    private int weaponPower;
+
+    public int WeaponPower { get { return weaponPower; } }
+
+    [SerializeField]
+    private int armorDefence;
+
+    public int ArmorDefence {  get { return armorDefence; } }
+
+    [SerializeField]
+    private ItemsManager equippedWeapon, equippedArmor;
+
+    public ItemsManager EquippedWeapon {  get { return equippedWeapon; } }
+
+    public ItemsManager EquippedArmor {  get { return equippedArmor; } }
+
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
+
         xpForNextLevel = new int[maxLevel];
         xpForNextLevel[1] = baseLevelXp;
 
@@ -140,4 +168,42 @@ public class PlayerStats : MonoBehaviour
             UpgradeStats();
 		}
 	}
+
+    public void AddHp(int amountOfHp)
+	{
+        currentHP += amountOfHp;
+
+        if (currentHP > maxHP)
+		{
+            currentHP = maxHP;
+		}
+	}
+
+    public void AddMana(int amountOfMana)
+    {
+        currentMana += amountOfMana;
+
+        if (currentMana > maxMana)
+        {
+            currentMana = maxMana;
+        }
+    }
+
+    public void EquipWeapon(ItemsManager weaponToEquip)
+	{
+        equippedWeapon = weaponToEquip;
+
+        equippedWeaponName = equippedWeapon.ItemName;
+
+        weaponPower = equippedWeapon.WeaponDexterity;
+	}
+
+    public void EquipArmor(ItemsManager armorToEquip)
+    {
+        equippedArmor = armorToEquip;
+
+        equippedArmorName = equippedArmor.ItemName;
+
+        armorDefence = equippedArmor.ArmorDefence;
+    }
 }
