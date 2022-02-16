@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: ForestArea_02
-  transitionAreaName: ForestArea_01_02
+  transitionAreaName: ForestArea_02_02
 --- !u!1001 &5133504018331826501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8686633233951588768, guid: 2cda78a3a630cd6468f4ffca6dd78635, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.81
+      value: 4.86
       objectReference: {fileID: 0}
     - target: {fileID: 8686633233951588768, guid: 2cda78a3a630cd6468f4ffca6dd78635, type: 3}
       propertyPath: m_LocalPosition.z
@@ -126,7 +126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8686633233951588769, guid: 2cda78a3a630cd6468f4ffca6dd78635, type: 3}
       propertyPath: transitionAreaName
-      value: 
+      value: ForestArea_02_02
       objectReference: {fileID: 0}
     - target: {fileID: 8686633233951588775, guid: 2cda78a3a630cd6468f4ffca6dd78635, type: 3}
       propertyPath: m_Name

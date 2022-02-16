@@ -12,11 +12,20 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private bool gameMenuOpened, dialogBoxOpened;
 
+    [SerializeField]
+    private int currentGil = 0;
+
+    public int CurrentGil { get { return currentGil; } set { currentGil = value; } }
+
     public bool GameMenuOpened {  get { return gameMenuOpened; } set { gameMenuOpened = value; } }
 
     public bool DialogBoxOpened {  get { return dialogBoxOpened; } set { dialogBoxOpened = value; } }
 
-	private void Awake()
+    private bool shopOpened = false;
+
+    public bool ShopOpened {  get { return shopOpened; } set { shopOpened = value; } }
+
+    private void Awake()
 	{
         if (instance == null && instance != this)
         {
@@ -60,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     private void HandlePlayerMovement()
 	{
-        if (dialogBoxOpened || gameMenuOpened)
+        if (dialogBoxOpened || gameMenuOpened || shopOpened)
 		{
             PlayerController.instance.CanMove = false;
 		}
