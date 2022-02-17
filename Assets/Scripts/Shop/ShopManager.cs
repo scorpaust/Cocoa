@@ -13,6 +13,10 @@ public class ShopManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI currentGilText;
 
+    private List<ItemsManager> itemsForSale;
+
+    public List<ItemsManager> ItemsForSale;
+
     // Start is called before the first frame update
     void Start()
     {
