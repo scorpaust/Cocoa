@@ -99,14 +99,6 @@ public class UIController : MonoBehaviour
         } 
 	}
 
-    private void ClearItemsSlotFromInventory()
-	{
-        foreach (Transform itemSlot in itemSlotContainerParent)
-		{
-            Destroy(itemSlot.gameObject);
-		}
-	}
-
     public void UpdateStats()
 	{
         playerStats = GameManager.instance.GetPlayerStats();
@@ -231,4 +223,12 @@ public class UIController : MonoBehaviour
 	{
         imageToFade.GetComponent<Animator>().SetTrigger("StartFading");
 	}
+
+    private void ClearItemsSlotFromInventory()
+    {
+        foreach (Transform itemSlot in itemSlotContainerParent)
+        {
+            Destroy(itemSlot.gameObject);
+        }
+    }
 }
